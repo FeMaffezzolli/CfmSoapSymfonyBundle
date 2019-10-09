@@ -1,5 +1,5 @@
 {
-    "name": "cm2tech/SolutiBirdIdSymfonyBundle",
+    "name": "cm2tech/soluti-bird-id-symfony-bundle",
     "type": "symfony-bundle",
     "description": "Integration of soluti/bird-id with Symfony",
     "keywords": ["soluti", "birdid"],
