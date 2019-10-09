@@ -1,13 +1,10 @@
 {
     "name": "cm2tech/SolutiBirdIdSymfonyBundle",
     "type": "symfony-bundle",
-
     "description": "Integration of soluti/bird-id with Symfony",
     "keywords": ["soluti", "birdid"],
-
     "homepage": "https://github.com/cm2tech/SolutiBirdIdSymfonyBundle",
     "license": "MIT",
-
     "authors": [
         {
             "name":  "CM2Tech",
