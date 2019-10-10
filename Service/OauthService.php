@@ -29,7 +29,7 @@ class OauthService
 
         $response = $client->request(
             'POST',
-            'https://api.birdid.com.br/v0/oauth/application',
+            'https://apihom.birdid.com.br/v0/oauth/application',
             [
                 'headers' => $requestHeaders,
                 'json'    => $jsonData,
@@ -56,7 +56,7 @@ class OauthService
 
         $response = $client->request(
             'POST',
-            'https://api.birdid.com.br/v0/oauth/client_token',
+            'https://apihom.birdid.com.br/v0/oauth/client_token',
             [
                 'headers' => $requestHeaders,
                 'json'    => $jsonData,
