@@ -1,25 +1,21 @@
-# Soluti Bird ID Symfony Bundle
+# Cfm Soap Symfony Bundle
 
 ## Installation
 
-    $ composer require cm2tech/soluti-bird-id-symfony-bundle
+    $ composer require cm2tech/cfm-soap-symfony-bundle
 
 ## Available Routes
 
-- https://api.birdid.com.br/v0/oauth/application
-- https://api.birdid.com.br/v0/oauth/client_token
+- https://ws.cfm.org.br:8080/WebServiceConsultaMedicos/ServicoConsultaMedicos?wsdl
 
 ## Usage
 
-    use Soluti\BirdIdSymfonyBundle\Service\OauthService as BirdIdOauthService;
-    use Soluti\BirdIdSymfonyBundle\Request\ClientToken as ClientTokenRequest;
+    use Cfm\SoapSymfonyBundle\Service\SoapService as CfmSoapService;
+    use Cfm\SoapSymfonyBundle\Request\DoctorData as DoctorDataRequest;
 
-    $clientTokenRequest = new ClientTokenRequest(
-        'client_id_here',
-        'client_secret_here'
-    );
+    $clientRequest = new CfmSoapService($wsdl);
 
-    $response = BirdIdOauthService::clientToken($clientTokenRequest);
+    $response = $clientRequest::DoctorDataRequest($queryParams);
 
     // var_dump($response->getStatusCode());
     // var_dump($response->getContent(false));
