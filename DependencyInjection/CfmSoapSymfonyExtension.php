@@ -17,4 +17,9 @@ class CfmSoapSymfonyExtension extends Extension
       );
       $loader->load('configs.yaml');
   }
+
+  public function getAlias()
+  {
+    return 'cfm_soap';
+  }
 }
