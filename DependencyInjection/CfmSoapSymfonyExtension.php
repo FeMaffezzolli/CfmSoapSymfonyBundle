@@ -15,7 +15,7 @@ class CfmSoapSymfonyExtension extends Extension
           $container,
           new FileLocator(__DIR__.'/Resources/config')
       );
-      $loader->load('configs.yaml');
+      $loader->load('cfm_soap.yaml');
   }
 
   public function getAlias()
