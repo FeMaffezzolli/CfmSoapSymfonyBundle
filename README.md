@@ -10,12 +10,12 @@
 
 ## Usage
 
-    use Cfm\SoapSymfonyBundle\Service\SoapService as CfmSoapService;
-    use Cfm\SoapSymfonyBundle\Request\DoctorData as DoctorDataRequest;
+    use Cfm\SoapSymfonyBundle\Service\DoctorDataRequest;
+    use Cfm\SoapSymfonyBundle\Request\DoctorData;
 
-    $clientRequest = new CfmSoapService($wsdl);
+    $doctorData = new DoctorData(
+        'uf', // string
+        'crm' // integer
+    );
 
-    $response = $clientRequest::DoctorDataRequest($queryParams);
-
-    // var_dump($response->getStatusCode());
-    // var_dump($response->getContent(false));
+    $data = DoctorDataRequest::Consultar($doctorData, 'CFM_KEY_HERE');
