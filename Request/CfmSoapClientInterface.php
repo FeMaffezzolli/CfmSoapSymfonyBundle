@@ -6,7 +6,7 @@ interface CfmSoapClientInterface
 {
     public function getWsdl(): string;
 
-    public function getClient(): ?nusoap_client;
+    public function getClient();
 
-    public function createClient(): void;
+    public function createClient();
 }
