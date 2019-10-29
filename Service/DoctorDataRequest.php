@@ -2,24 +2,27 @@
 
 namespace Cfm\SoapSymfonyBundle\Service;
 
-use Cfm\SoapSymfonyBundle\Request\DoctorDataInterface;
+use Cfm\SoapSymfonyBundle\Request\DoctorData;
 use Cfm\SoapSymfonyBundle\Request\CfmSoapClient;
 
 class DoctorDataRequest
 {
-    public static function Consultar($request, $key)
+    public static function Consultar(DoctorData $doctorData, String $key): Array
     {
-        $client = new CfmSoapClient();
+        $cfmSoap = new CfmSoapClient();
+        $cfmSoap->createClient();
+
+        $client = $cfmSoap->getClient();
         $client->soap_defencoding = 'UTF-8';
         $client->decode_utf8 = FALSE;
 
         $jsonData = [
-            'uf'    => $request->get('uf'),
-            'crm'   => $request->get('crm'),
+            'uf'    => $doctorData->getUf(),
+            'crm'   => $doctorData->getCrm(),
             'chave' => $key
         ];
 
-        $response = $client->getClient()->call('Consultar', $jsonData);
+        $response = $client->call('Consultar', $jsonData);
 
         return $response;
     }

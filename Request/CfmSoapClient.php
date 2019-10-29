@@ -2,14 +2,14 @@
 
 namespace Cfm\SoapSymfonyBundle\Request;
 
-class CfmSoapClient implements CfmSoapInterface
+class CfmSoapClient implements CfmSoapClientInterface
 {
     const WSDL_PATH = 'https://ws.cfm.org.br:8080/WebServiceConsultaMedicos/ServicoConsultaMedicos?wsdl';
 
     private $client;
 
     public function __construct() {
-        return $this->createClient();
+        $this->createClient();
     }
 
     public function getWsdl(): string
@@ -27,7 +27,5 @@ class CfmSoapClient implements CfmSoapInterface
         $client = new \nusoap_client(self::WSDL_PATH, 'wsdl');
 
         $this->client = $client;
-
-        return $this->client;
     }
 }
